@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: HTTP API
+
+Globals:
+  Function:
+    Timeout: 5
+    Handler: app.lambdaHandler
+    Runtime: nodejs18.x
+ 
+Resources:
+  HttpApi:
+    Type: AWS:Serverless::HttpApi
+    Properties:
+      
+
+  LambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Events:
+        RootGet:
+          Type: HttpApi
+          Properties:
+            Path: /
+            Method: get

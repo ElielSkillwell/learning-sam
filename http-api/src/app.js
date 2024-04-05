@@ -1,1 +1,1 @@
-exports.lambdaHandler = async (event) => JSON.stringify(event);
+module.exports.lambdaHandler = async (event) => JSON.stringify(event);
